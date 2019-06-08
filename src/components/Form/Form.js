@@ -39,6 +39,8 @@ export default class Form extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <p>Введите номер без семерки.</p>
+                    <p>Пример: 9840001234</p>
                     <input onChange={this.handleChange} value={this.state.text}/>
                     <input type='submit' value='Отправить'/>
                 </form>
