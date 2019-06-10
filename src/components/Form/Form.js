@@ -10,7 +10,7 @@ export default class Form extends React.Component {
 
 
     requestToApi = () => {
-        let url = "http://viktorshiyan.ru:3000/find?number=" + this.state.text.substring(2);
+        let url = "https://viktorshiyan.ru/find?number=" + this.state.text.substring(2);
 
         request({
             url: url,
