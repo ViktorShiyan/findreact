@@ -22,7 +22,10 @@ export default class Footer extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <Link className={"nav-link"} to="/first">First</Link>
+                                <Link className={"nav-link"} to="/first">First number</Link>
+                            </li>
+                            <li className={"nav-item "}>
+                                <Link className={"nav-link"} to="/more">More number</Link>
                             </li>
                         </ul>
                     </div>
