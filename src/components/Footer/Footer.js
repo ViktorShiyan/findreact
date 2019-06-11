@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Footer.module.css';
+import {Link} from "react-router-dom";
 
 export default class Footer extends React.Component {
 
@@ -12,7 +13,7 @@ export default class Footer extends React.Component {
         return (
             <div className={classes.c_footer}>
                 <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
-                    <a className="navbar-brand" href="#">Phone-Info</a>
+                    <Link className={"navbar-brand"} to="/home">Phone-Info</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -21,7 +22,7 @@ export default class Footer extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                                <Link className={"nav-link"} to="/first">First</Link>
                             </li>
                         </ul>
                     </div>
