@@ -25,7 +25,7 @@ export default class Footer extends React.Component {
                                 <Link className={"nav-link"} to="/first">First number</Link>
                             </li>
                             <li className={"nav-item "}>
-                                <Link className={"nav-link"} to="/more">More number</Link>
+                                <Link className={"nav-link"} to="/more">List number</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import Hello from "./Hello/Hello";
+import Marketing from "./Marketing/Marketing";
 
 export default class Start extends React.Component {
     constructor(props) {
@@ -9,8 +11,11 @@ export default class Start extends React.Component {
 
     render() {
         return (
-            <div>
-                приветствую!!!
+            <div className="container pb-3">
+                <Hello/>
+                <div className="container marketing">
+                    <Marketing/>
+                </div>
             </div>
         )
     }
