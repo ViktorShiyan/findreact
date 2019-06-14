@@ -12,9 +12,10 @@ function App() {
             <div className="App">
                 <Footer/>
                 <div className={"content"}>
-                    <Route path="/home" component={Start}/>
-                    <Route path="/first" component={Form}/>
-                    <Route path="/more" component={FormMore}/>
+                    <Route path="//" component={Start}/>
+                    <Route path="/home/" component={Start}/>
+                    <Route path="/first/" component={Form}/>
+                    <Route path="/more/" component={FormMore}/>
                 </div>
             </div>
         </Router>
