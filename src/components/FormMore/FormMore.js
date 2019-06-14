@@ -49,19 +49,31 @@ export default class FormMore extends React.Component {
                     <form className={"form"} onSubmit={this.handleSubmit}>
                         <div className={"form-group mx-sm-3 mb-2"}>
                             <textarea className={"form-control form-control-lg"}
-                                      onChange={this.handleChange}>{this.state.text}</textarea>
+                                      onChange={this.handleChange} rows={6}>{this.state.text}</textarea>
                         </div>
                         <input className={"btn btn-primary mb-2"} type='submit' value='Отправить'/>
                     </form>
-                    <p>{this.state.code.length !== 0 ? this.state.code.reduce((acc, cur) => {
-                        if (cur) {
-                            return [...acc, `Номер:${cur.number} Регион:${cur.region} Компания:${cur.company}`];
-                        } else {
-                            return [...acc, `Ошибка формата номера. Проверьте правильность номера`];
-                        }
-                    }, []).map((cur) => {
-                        return <p> {cur}</p>
-                    }) : 'Ждём запрос'}</p>
+                    <table className={"table"}>
+                        <thead className="thead-dark">
+                        <tr>
+                            <th>Номер</th>
+                            <th>Компания</th>
+                            <th>Регион</th>
+                        </tr>
+                        </thead>
+                        {this.state.code.length !== 0 ? this.state.code.reduce((acc, cur) => {
+                            if (cur) {
+                                return [...acc, cur];
+                            } else {
+                                return [...acc, `Ошибка формата номера. Проверьте правильность номера`];
+                            }
+                        }, []).map((cur) => {
+                            return <tr>
+                                <td>{cur.number}</td>
+                                <td>{cur.company}</td>
+                                <td>{cur.region}</td>
+                            </tr>
+                        }) : 'Ждём запрос'}</table>
                 </div>
             </main>
         )
