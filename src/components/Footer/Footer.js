@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Footer.module.css';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 export default class Footer extends React.Component {
 
@@ -21,11 +21,13 @@ export default class Footer extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <Link className={"nav-link"} to="/first">First number</Link>
+                            <li className="nav-item ">
+                                <NavLink className={"nav-link"} activeClassName={"nav-link active"} to="/first">First
+                                    number</NavLink>
                             </li>
                             <li className={"nav-item "}>
-                                <Link className={"nav-link"} to="/more">List number</Link>
+                                <NavLink className={"nav-link"} activeClassName={"nav-link active"} to="/more">List
+                                    number</NavLink>
                             </li>
                         </ul>
                     </div>
