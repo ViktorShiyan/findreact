@@ -65,7 +65,8 @@ export default class FormMore extends React.Component {
                             if (cur) {
                                 return [...acc, cur];
                             } else {
-                                return [...acc, `Ошибка формата номера. Проверьте правильность номера`];
+                                let err = "ошибка номера";
+                                return [...acc, {number : err, company: err, region : err}];
                             }
                         }, []).map((cur) => {
                             return <tr>
