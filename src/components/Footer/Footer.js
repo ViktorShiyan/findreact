@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
         return (
             <div className={classes.c_footer}>
                 <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
-                    <Link className={"navbar-brand"} to="/home">Phone-Info</Link>
+                    <Link className={"navbar-brand nameApp"} to="/home">Phone-Info</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -21,6 +21,10 @@ export default class Footer extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
+                            <li className="nav-item ">
+                                <NavLink className={"nav-link"} activeClassName={"nav-link active"}
+                                         to="/home">Home</NavLink>
+                            </li>
                             <li className="nav-item ">
                                 <NavLink className={"nav-link"} activeClassName={"nav-link active"} to="/first">First
                                     number</NavLink>

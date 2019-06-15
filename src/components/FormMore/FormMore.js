@@ -66,7 +66,7 @@ export default class FormMore extends React.Component {
                                 return [...acc, cur];
                             } else {
                                 let err = "ошибка номера";
-                                return [...acc, {number : err, company: err, region : err}];
+                                return [...acc, {number: err, company: err, region: err}];
                             }
                         }, []).map((cur) => {
                             return <tr>
@@ -74,7 +74,7 @@ export default class FormMore extends React.Component {
                                 <td>{cur.company}</td>
                                 <td>{cur.region}</td>
                             </tr>
-                        }) : 'Ждём запрос'}</table>
+                        }) : ''}</table>
                 </div>
             </main>
         )
