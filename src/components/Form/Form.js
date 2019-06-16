@@ -5,12 +5,12 @@ import formater from '../../tools/numberFormater';
 export default class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {text: " "};
+        this.state = {text: ""};
     }
 
 
     requestToApi = () => {
-        let url = "https://viktorshiyan.ru/find?number=" + this.state.text.substring(2);
+        let url = "https://viktorshiyan.ru/find?number=" + this.state.text;
 
         request({
             url: url,
@@ -50,7 +50,7 @@ export default class Form extends React.Component {
                         </div>
                         <div className={"form-group mx-sm-3 mb-2"}>
                             <input placeholder={"Enter number"} className={"form-control form-control-lg"}
-                                   onChange={this.handleChange} value={formater(this.state.text)}/>
+                                   onChange={this.handleChange} value={this.state.text}/>
                         </div>
                         <input className={"btn btn-primary mb-2"} type='submit' value='Отправить'/>
                     </form>

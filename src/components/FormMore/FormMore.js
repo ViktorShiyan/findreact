@@ -70,7 +70,7 @@ export default class FormMore extends React.Component {
                             }
                         }, []).map((cur) => {
                             return <tr>
-                                <td>{cur.number}</td>
+                                <td>{formater(cur.number)}</td>
                                 <td>{cur.company}</td>
                                 <td>{cur.region}</td>
                             </tr>
