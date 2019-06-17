@@ -9,5 +9,5 @@ cache:
   directories:
     - node_modules
 script:
-  - npm test --coverage --watchAll
+  - npm test -- --coverage --watchAll
   - npm run build
