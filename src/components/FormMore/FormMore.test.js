@@ -1,9 +1,9 @@
 import TestRenderer from 'react-test-renderer';
 import React from 'react';
-import Hello from './Hello';
+import FormMore from './FormMore';
 
 it('Test hello', () => {
-    const testRenderer = TestRenderer.create(<Hello/>);
+    const testRenderer = TestRenderer.create(<FormMore/>);
     const testJSON = testRenderer.toJSON();
-    expect(testJSON.type).toBe('div');
+    expect(testJSON.type).toBe('main');
 });

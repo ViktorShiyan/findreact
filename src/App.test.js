@@ -1,5 +1,9 @@
+import TestRenderer from 'react-test-renderer';
 import React from 'react';
+import App from './App';
 
-it('renders without crashing', () => {
-    expect(1).toBe(1);
+it('Test App', () => {
+    const testRenderer = TestRenderer.create(<App/>);
+    const testJSON = testRenderer.toJSON();
+    expect(testJSON.type).toBe('div');
 });

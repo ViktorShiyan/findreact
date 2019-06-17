@@ -40,7 +40,9 @@
       "<rootDir>/src/**/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/tools/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
+      "!<rootDir>/path/to/dir/",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/serviceWorker.js"
     ],
     "coverageThreshold": {
       "global": {
