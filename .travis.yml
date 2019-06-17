@@ -10,6 +10,7 @@ cache:
   directories:
     - node_modules
 script:
-  - npm test -- --coverage && codecov
+  - npm test -- --coverage
   - npm run build
   - cat ./coverage/lcov.info
+  - codecov
