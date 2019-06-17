@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coveralls": "npm test -- --coverage --watchAll && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm test -- --coverage --watchAll | coveralls"
   },
   "eslintConfig": {
     "extends": "react-app"
