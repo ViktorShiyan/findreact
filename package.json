@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "codecov.io": "^0.1.6",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -54,6 +55,8 @@
     }
   },
   "devDependencies": {
-    "coveralls": "^3.0.4"
+    "coveralls": "^3.0.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0"
   }
 }

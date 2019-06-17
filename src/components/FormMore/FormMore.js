@@ -1,5 +1,6 @@
 import React from 'react';
 import request from 'request';
+import _ from 'lodash';
 import formater from '../../tools/numberFormater';
 
 export default class FormMore extends React.Component {
@@ -17,11 +18,10 @@ export default class FormMore extends React.Component {
             json: true,
         }, (error, response, body) => {
             if ((!error && response.statusCode === 200) || (!error && response.statusCode === 304)) {
-                console.log(body);// Print the json response
-                let d = body.array;
-                console.log('THIS is Array' + JSON.stringify(d));
+                //console.log(body);// Print the json response
+                //console.log('THIS is Array' + JSON.stringify(d));
                 this.setState({code: body.array});
-                console.log(this.state.code[0]);
+                //console.log(this.state.code[0]);
             }
         })
     };
@@ -49,7 +49,7 @@ export default class FormMore extends React.Component {
                     <form className={"form"} onSubmit={this.handleSubmit}>
                         <div className={"form-group mx-sm-3 mb-2"}>
                             <textarea className={"form-control form-control-lg"}
-                                      onChange={this.handleChange} rows={6}>{this.state.text}</textarea>
+                                      onChange={this.handleChange} rows={6} value={this.state.text}/>
                         </div>
                         <input className={"btn btn-primary mb-2"} type='submit' value='Отправить'/>
                     </form>
@@ -69,7 +69,7 @@ export default class FormMore extends React.Component {
                                 return [...acc, {number: err, company: err, region: err}];
                             }
                         }, []).map((cur) => {
-                            return <tr>
+                            return <tr key={_.uniqueId('row_')}>
                                 <td>{formater(cur.number)}</td>
                                 <td>{cur.company}</td>
                                 <td>{cur.region}</td>

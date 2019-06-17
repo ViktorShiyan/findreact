@@ -17,7 +17,7 @@ export default class Form extends React.Component {
             json: true,
         }, (error, response, body) => {
             if ((!error && response.statusCode === 200) || (!error && response.statusCode === 304)) {
-                console.log(body);// Print the json response
+                //console.log(body);// Print the json response
                 this.setState({code: body.code});
                 this.setState({company: body.company});
                 this.setState({region: body.region});
