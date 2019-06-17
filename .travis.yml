@@ -1,9 +1,12 @@
 language: node_js
 node_js:
   - "stable"
+install:
+  - npm install -g codecov
 cache:
   directories:
     - node_modules
 script:
-  - npm test
+  - npm test -- --coverage --watchAll
   - npm run build
+  - codecov
