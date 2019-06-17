@@ -5,10 +5,11 @@ before_install:
   - npm update
 install:
   - npm install
+  - npm install -g codecov
 cache:
   directories:
     - node_modules
 script:
-  - npm test -- --coverage
+  - npm test -- --coverage && codecov
   - npm run build
   - cat ./coverage/lcov.info
