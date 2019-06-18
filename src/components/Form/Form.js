@@ -1,5 +1,5 @@
 import React from 'react';
-import request from 'request';
+import rp from 'request-promise';
 import formater from '../../tools/numberFormater';
 
 export default class Form extends React.Component {
@@ -10,19 +10,26 @@ export default class Form extends React.Component {
 
 
     requestToApi = () => {
-        let url = "https://viktorshiyan.ru/find?number=" + this.state.text;
 
-        request({
-            url: url,
-            json: true,
-        }, (error, response, body) => {
-            if ((!error && response.statusCode === 200) || (!error && response.statusCode === 304)) {
-                //console.log(body);// Print the json response
+        var options = {
+            uri: "https://viktorshiyan.ru/find?number=" + this.state.text,
+            headers: {
+                'User-Agent': 'Request-Promise'
+            },
+            json: true
+        };
+
+        rp(options)
+            .then((body) => {
                 this.setState({code: body.code});
                 this.setState({company: body.company});
                 this.setState({region: body.region});
-            }
-        })
+            })
+            .catch((err) => {
+                this.setState({code: ''});
+                this.setState({company: `Error - ${err.statusCode}`});
+                this.setState({region: ''});
+            });
     };
 
 

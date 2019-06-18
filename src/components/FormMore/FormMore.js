@@ -1,7 +1,7 @@
 import React from 'react';
-import request from 'request';
 import _ from 'lodash';
 import formater from '../../tools/numberFormater';
+import rp from "request-promise";
 
 export default class FormMore extends React.Component {
     constructor(props) {
@@ -11,19 +11,31 @@ export default class FormMore extends React.Component {
 
 
     requestToApi = () => {
-        let url = "https://viktorshiyan.ru/findmore?number=" + this.state.text;
 
-        request({
-            url: url,
-            json: true,
-        }, (error, response, body) => {
-            if ((!error && response.statusCode === 200) || (!error && response.statusCode === 304)) {
-                //console.log(body);// Print the json response
-                //console.log('THIS is Array' + JSON.stringify(d));
+        var options = {
+            uri: "https://viktorshiyan.ru/findmore?number=" + this.state.text,
+            headers: {
+                'User-Agent': 'Request-Promise'
+            },
+            json: true
+        };
+
+        rp(options)
+            .then((body) => {
                 this.setState({code: body.array});
-                //console.log(this.state.code[0]);
-            }
-        })
+            })
+            .catch((err) => {
+                this.setState({
+                    code: {
+                        "array": [{
+                            "number": "Error",
+                            "code": "965",
+                            "company": err.statusCode,
+                            "region": ""
+                        }]
+                    }
+                });
+            });
     };
 
 
@@ -61,6 +73,7 @@ export default class FormMore extends React.Component {
                             <th>Регион</th>
                         </tr>
                         </thead>
+                        <tbody>
                         {this.state.code.length !== 0 ? this.state.code.reduce((acc, cur) => {
                             if (cur) {
                                 return [...acc, cur];
@@ -74,7 +87,9 @@ export default class FormMore extends React.Component {
                                 <td>{cur.company}</td>
                                 <td>{cur.region}</td>
                             </tr>
-                        }) : ''}</table>
+                        }) : ''}
+                        </tbody>
+                    </table>
                 </div>
             </main>
         )
