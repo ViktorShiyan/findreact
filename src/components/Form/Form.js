@@ -21,14 +21,10 @@ export default class Form extends React.Component {
 
         rp(options)
             .then((body) => {
-                this.setState({code: body.code});
-                this.setState({company: body.company});
-                this.setState({region: body.region});
+                this.setState({code: body.code, company: body.company, region: body.region});
             })
             .catch((err) => {
-                this.setState({code: ''});
-                this.setState({company: `Error - ${err.statusCode}`});
-                this.setState({region: ''});
+                this.setState({code: '', company: `Error - ${err.statusCode}`, region: ''});
             });
     };
 

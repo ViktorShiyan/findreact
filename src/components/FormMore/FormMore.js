@@ -25,16 +25,7 @@ export default class FormMore extends React.Component {
                 this.setState({code: body.array});
             })
             .catch((err) => {
-                this.setState({
-                    code: {
-                        "array": [{
-                            "number": "Error",
-                            "code": "965",
-                            "company": err.statusCode,
-                            "region": ""
-                        }]
-                    }
-                });
+                this.setState({code: {"array": [{"number": "Error", "code": "", "company": err.statusCode, "region": ""}]}});
             });
     };
 
