@@ -1,6 +1,5 @@
 import React from 'react';
 import rp from 'request-promise';
-import formater from '../../tools/numberFormater';
 
 export default class Form extends React.Component {
     constructor(props) {
@@ -57,7 +56,6 @@ export default class Form extends React.Component {
                         </div>
                         <input className={"btn btn-primary mb-2"} type='submit' value='Отправить'/>
                     </form>
-                    <p>{formater(this.state.text)}</p>
                     <p>{this.state.company}</p>
                     <p>{this.state.region}</p>
                 </div>
